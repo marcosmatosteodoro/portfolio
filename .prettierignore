@@ -1,0 +1,11 @@
+# Build output & deps
+.next/
+out/
+build/
+node_modules/
+
+# Lockfiles
+package-lock.json
+
+# Internal planning docs (not versioned / not formatted)
+planejamento/

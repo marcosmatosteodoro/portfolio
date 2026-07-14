@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Marcos Teodoro
 
-## Getting Started
+Site de portfólio bilíngue (pt-BR / en) voltado para recrutadores. Sem banco de
+dados: todo o conteúdo é estático e tipado em `src/data/`.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **TypeScript**
+- **Tailwind CSS v4** (dark mode por classe)
+- **ESLint + Prettier**, **Husky + lint-staged** (pre-commit)
+
+## Recursos
+
+- **Tema claro/escuro** — inicia pela preferência do navegador; escolha salva no `localStorage`; script anti-FOUC evita flash de tema.
+- **Idioma pt-BR / en** — detecta pelo idioma do navegador (contém `pt` → pt-BR, senão en); escolha salva no `localStorage`.
+- **Responsivo** e com **animações** de entrada (respeitando `prefers-reduced-motion`).
+
+## Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev           # ambiente de desenvolvimento
+npm run build         # build de produção
+npm run start         # serve o build
+npm run lint          # ESLint
+npm run format        # Prettier (escreve)
+npm run format:check  # Prettier (checa)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Onde editar o conteúdo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/data/profile.ts` — nome, cargo, bio, contatos, caminhos do CV
+- `src/data/experiences.ts` — experiências profissionais
+- `src/data/skills.ts` — skills por categoria
+- `src/data/education.ts` — formação, certificações, cursos, idiomas
+- `src/data/projects.ts` — projetos (placeholder; adicionar objetos `Project`)
+- `src/i18n/dictionaries/{en,pt}.ts` — textos de interface
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### CVs
 
-## Learn More
+Substitua os placeholders em `public/cv/marcos-teodoro-pt.pdf` e
+`public/cv/marcos-teodoro-en.pdf` pelos PDFs reais.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Suba o repositório para o GitHub.
+2. Em [vercel.com/new](https://vercel.com/new), importe o repositório.
+3. A Vercel detecta o Next.js automaticamente — basta confirmar. Cada `push` na
+   branch principal dispara um novo deploy.

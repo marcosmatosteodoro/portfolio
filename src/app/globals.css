@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+/* Dark mode dirigido por classe no <html> (aplicada pelo script anti-FOUC). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- Tema claro (padrão) ---- */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --card: #f8fafc;
+  --card-border: #e2e8f0;
+  --muted: #64748b;
+  --accent: #6d28d9;
+  --accent-hover: #5b21b6;
+  --accent-foreground: #ffffff;
+}
+
+/* ---- Tema escuro (identidade principal) ---- */
+.dark {
+  --background: #0a0a0f;
+  --foreground: #e6e7eb;
+  --card: #14141c;
+  --card-border: #262633;
+  --muted: #9aa0ac;
+  --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
+  --accent-foreground: #0a0a0f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* compensa o header fixo ao navegar por âncoras */
+  scroll-padding-top: 5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Respeita quem prefere menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

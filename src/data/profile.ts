@@ -26,6 +26,22 @@ export const profile = {
     en: "Remote · Brazil",
   } satisfies Localized,
 
+  /** Estatísticas exibidas no Hero. */
+  stats: [
+    {
+      value: "4+",
+      label: { "pt-BR": "anos de experiência", en: "years of experience" },
+    },
+    {
+      value: "4",
+      label: { "pt-BR": "empresas", en: "companies" },
+    },
+    {
+      value: "40+",
+      label: { "pt-BR": "tecnologias", en: "technologies" },
+    },
+  ] satisfies { value: string; label: Localized }[],
+
   /** Bio em parágrafos (usada na seção Sobre). */
   bio: {
     "pt-BR": [

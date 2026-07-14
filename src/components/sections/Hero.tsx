@@ -50,6 +50,16 @@ export function Hero() {
               </a>
             </div>
           </Reveal>
+          <Reveal delay={400}>
+            <dl className="mt-10 flex justify-center gap-8 md:justify-start">
+              {profile.stats.map((stat) => (
+                <div key={stat.label.en} className="text-center md:text-left">
+                  <dt className="text-accent text-2xl font-bold sm:text-3xl">{stat.value}</dt>
+                  <dd className="text-muted mt-1 text-xs sm:text-sm">{stat.label[locale]}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </div>
 
         {/* Foto de perfil */}

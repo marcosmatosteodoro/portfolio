@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://marcosteodoro.dev"),
+  // URL atual do deploy. Trocar quando houver domínio próprio.
+  metadataBase: new URL("https://portfolio-ten-psi-gcohgte9fy.vercel.app"),
   title: "Marcos Teodoro — Senior Full-Stack Software Engineer",
   description:
     "Portfolio of Marcos Teodoro, Senior Full-Stack Software Engineer working with Node.js, TypeScript, React, Next.js and cloud technologies.",
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     description:
       "Senior Full-Stack Software Engineer — Node.js, TypeScript, React, Next.js and cloud.",
     type: "website",
+    url: "/",
   },
 };
 

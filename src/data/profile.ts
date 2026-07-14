@@ -7,6 +7,8 @@ export const profile = {
   name: "Marcos Paulo Matos Teodoro",
   shortName: "Marcos Teodoro",
   initials: "MT",
+  /** Foto de perfil em /public. */
+  photo: "/profile.jpeg",
 
   role: {
     "pt-BR": "Engenheiro de Software Full-Stack Sênior",

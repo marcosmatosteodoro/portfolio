@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { profile } from "@/data/profile";
 import { Reveal } from "@/components/ui/Reveal";
@@ -51,11 +52,16 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Avatar placeholder (troca por foto depois) */}
+        {/* Foto de perfil */}
         <Reveal delay={120}>
-          <div className="from-accent/30 to-accent/5 border-card-border flex h-40 w-40 shrink-0 items-center justify-center rounded-full border bg-gradient-to-br sm:h-48 sm:w-48">
-            <span className="text-accent font-mono text-5xl font-bold">{profile.initials}</span>
-          </div>
+          <Image
+            src={profile.photo}
+            alt={profile.shortName}
+            width={400}
+            height={400}
+            priority
+            className="border-card-border ring-accent/20 h-40 w-40 shrink-0 rounded-full border object-cover ring-4 sm:h-48 sm:w-48"
+          />
         </Reveal>
       </div>
     </section>

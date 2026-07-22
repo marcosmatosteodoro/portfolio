@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,15 @@ export const metadata: Metadata = {
     "Next.js",
   ],
   authors: [{ name: "Marcos Teodoro" }],
+  applicationName: "Marcos Teodoro — Portfolio",
+  appleWebApp: {
+    capable: true,
+    title: "Marcos Teodoro",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    apple: "/icons/apple-icon-180.png",
+  },
   openGraph: {
     title: "Marcos Teodoro — Senior Full-Stack Software Engineer",
     description:
@@ -36,6 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
+  ],
 };
 
 /**
@@ -76,6 +93,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground flex min-h-full flex-col">
         <Providers>{children}</Providers>
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

@@ -91,4 +91,34 @@ export const projects: Project[] = [
     // media: adicionar imagens/vídeos em /public/projects/diario-de-classe/ (na ordem desejada).
     media: [],
   },
+  {
+    name: "3D Real Estate Immersion",
+    description: {
+      "pt-BR":
+        "Plataforma de imersão 3D para compra e venda de imóveis (MetaOriginal): orquestra web, mobile, um servidor 3D em tempo real (WebSocket + WebRTC) e apps de apresentação — white-label por cliente. Atuei como Tech Lead.",
+      en: "3D immersion platform for real estate buying & selling (MetaOriginal): orchestrates web, mobile, a real-time 3D server (WebSocket + WebRTC) and presentation apps — white-labeled per client. I worked as Tech Lead.",
+    },
+    longDescription: {
+      "pt-BR":
+        "Plataforma de imersão 3D para compra e venda de imóveis desenvolvida na MetaOriginal, onde atuei como Tech Lead. Não tinha nome fixo: cada cliente recebia um app white-label com a própria marca. Era uma orquestração de várias aplicações em simultâneo: (1) Web — dashboard em Ruby on Rails (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) que concentrava toda a regra de negócio (sessões, clientes, valores de imóveis, configurações 3D personalizadas) com permissões por papel (corretor, administrador, super-administrador) e envio de e-mails; (2) Mobile — app em Flutter para o corretor apresentar a experiência 3D, conectando-se ao back-end e ao 3D separadamente; (3) Servidor 3D — serviço WebSocket em Node.js que ligava/desligava o 3D, selecionava a cena e as configurações, autenticava com o back-end e estabelecia a conexão WebRTC; (4) Apresentação — app Electron (React + TypeScript) exclusivo para o CEO apresentar a experiência, comunicando-se com o WebSocket e exibindo o 3D com configurações de apresentação; (5) Landing page — página em PHP + WordPress para o cliente rever, de forma interativa e personalizada, as fotos da sua imersão 3D junto de mensagens do corretor. Infra na Digital Ocean (armazenamento de fotos/vídeos, CDN e servidores) com CI/CD robusto no GitHub. A aplicação foi descontinuada.",
+      en: "3D immersion platform for real estate buying & selling built at MetaOriginal, where I worked as Tech Lead. It had no fixed name: each client got a white-label app under their own brand. It was an orchestration of several apps running together: (1) Web — a Ruby on Rails dashboard (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) holding all business rules (sessions, clients, property values, custom 3D settings) with role-based permissions (broker, admin, super-admin) and email sending; (2) Mobile — a Flutter app for brokers to present the 3D experience, connecting to the back-end and the 3D separately; (3) 3D server — a Node.js WebSocket service that turned the 3D on/off, selected the scene and settings, authenticated with the back-end and established the WebRTC connection; (4) Presentation — a dedicated Electron app (React + TypeScript) for the CEO to present the experience, talking to the WebSocket and rendering the 3D with presentation settings; (5) Landing page — a PHP + WordPress page where the client could interactively review the photos from their 3D immersion along with the broker's messages. Infrastructure on Digital Ocean (photo/video storage, CDN and servers) with strong CI/CD on GitHub. The application has been discontinued.",
+    },
+    stack: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Node.js",
+      "WebSocket",
+      "WebRTC",
+      "Flutter",
+      "Electron",
+      "React",
+      "TypeScript",
+      "PHP / WordPress",
+      "Digital Ocean",
+      "CI/CD",
+    ],
+    // Sem liveUrl/repoUrl: aplicação descontinuada e código proprietário do cliente.
+    // media: adicionar imagens/vídeos em /public/projects/3d-real-estate-immersion/ (na ordem desejada).
+    media: [],
+  },
 ];

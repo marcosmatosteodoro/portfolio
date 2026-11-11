@@ -123,4 +123,82 @@ export const projects: Project[] = [
     // media: adicionar imagens/vídeos em /public/projects/3d-real-estate-immersion/ (na ordem desejada).
     media: [],
   },
+  {
+    name: "Mnemônicos",
+    description: {
+      "pt-BR":
+        "Ferramenta full-stack de produção de material mnemônico para concursos: transforma texto de lei em Tiras mnemônicas e exporta PDFs com protocolo de revisão espaçada, prontos para venda em marketplace.",
+      en: "Full-stack tool for producing mnemonic study material for public-service exams: turns legal text into mnemonic strips and exports PDFs with a spaced-repetition protocol, ready to sell on marketplaces.",
+    },
+    longDescription: {
+      "pt-BR":
+        "Projeto Material Mnemônico de Alta Retenção para Concursos, cujo objetivo é converter reconhecimento (achar familiar) em evocação (lembrar sem a dica). Editores registram o trecho exato de uma lei, súmula ou ato com disciplina, tema, fonte normativa e a classe do radar de prova (o quanto o assunto cai), quebram a regra em partes, montam a Tira mnemônica, completam o reforço e exportam o PDF com o protocolo de revisão espaçada impresso (R0, R24, R3, R7, R14 e R30). Cada material tem versões que o administrador aprova, e os PDFs prontos ficam num acervo e são reunidos em pacotes exportados para venda em marketplace. Controle de acesso por papel (editor vê só o que criou; administrador vê tudo e cuida das contas), biblioteca visual e tema claro/escuro. Duas aplicações independentes, cada uma com repositório e deploy próprios na Vercel: front em Next.js consumindo a API por RTK Query e API REST em Express + Prisma.",
+      en: "A high-retention mnemonic study material project for public-service exams, whose goal is to turn recognition (finding something familiar) into recall (remembering it without the cue). Editors register the exact excerpt of a law, precedent or act with subject, topic, legal source and an exam-radar class (how often it shows up), break the rule into parts, build the mnemonic strip, complete the reinforcement and export a PDF with a printed spaced-repetition protocol (R0, R24, R3, R7, R14 and R30). Each material has versions approved by an admin, and finished PDFs go into a library and are bundled into packages exported for sale on marketplaces. Role-based access (editors see only their own content; admins see everything and manage accounts), a visual library and light/dark theme. Two independent apps, each with its own repository and Vercel deploy: a Next.js front end consuming the API through RTK Query and an Express + Prisma REST API.",
+    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Redux Toolkit (RTK Query)",
+      "Tailwind CSS 4",
+      "PWA",
+      "Node.js 22",
+      "Express 5",
+      "Prisma 7",
+      "PostgreSQL",
+      "Zod",
+      "Jest",
+    ],
+    liveUrl: "https://mnemonicos-frontend.vercel.app",
+    // repoUrl: adicionar quando o repositório for público.
+    // media: adicionar imagens/vídeos em /public/projects/mnemonicos/ (na ordem desejada).
+    media: [],
+  },
+  {
+    name: "Carnes & Cia",
+    description: {
+      "pt-BR":
+        "PWA de previsão de vendas para um açougue: mostra as vendas do mês, prevê os próximos 12 meses a partir do histórico e tem um chat com IA que responde sobre os números.",
+      en: "Sales-forecasting PWA for a butcher shop: shows the month's sales, forecasts the next 12 months from historical data and includes an AI chat that answers questions about the numbers.",
+    },
+    longDescription: {
+      "pt-BR":
+        "Aplicativo (PWA para celular) feito para o açougue Carnes & Cia. A tela inicial mostra o vendido no mês até ontem comparado ao mesmo período do ano anterior, a previsão do mês atual e do próximo e os cortes que mais venderam. A tela de previsão permite escolher mês, produto e medida (R$ ou kg) e exibe o mesmo mês nos anos anteriores, a previsão com faixa provável e os próximos 12 meses. O modelo de previsão é feito de funções puras testadas: usa o mesmo mês dos últimos 5 anos, corrige cada ano pelo crescimento recente (limitado a ±30%) e faz uma média ponderada que dá mais peso ao ano mais recente. No chat com o Claude, os números vêm sempre do banco por ferramentas (tool use), e o modelo só interpreta. Segurança: senhas com Argon2id, bloqueio após tentativas de login erradas, sessão em cookie httpOnly assinado, autorização conferida no servidor em toda página e rota, SQL parametrizado, entradas validadas com Zod e limite diário de mensagens no chat.",
+      en: "A mobile PWA built for the Carnes & Cia butcher shop. The home screen shows month-to-date sales compared with the same period last year, the forecast for the current and next month, and the best-selling cuts. The forecast screen lets the user pick a month, product and unit (BRL or kg) and shows the same month in previous years, the forecast with a likely range, and the next 12 months. The forecasting model is built from tested pure functions: it takes the same month over the last 5 years, adjusts each year by recent growth (capped at ±30%) and computes a weighted average that favors the most recent year. In the Claude-powered chat, numbers always come from the database through tools (tool use), and the model only interprets them. Security: Argon2id password hashing, lockout after failed login attempts, signed httpOnly session cookie, server-side authorization on every page and route, parameterized SQL, Zod-validated inputs and a daily chat message limit.",
+    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "PWA",
+      "Prisma 7",
+      "PostgreSQL",
+      "Claude API (tool use)",
+      "Recharts",
+      "Argon2",
+      "Zod",
+      "Vitest",
+    ],
+    // Sem liveUrl/repoUrl: app de uso interno do cliente, com acesso restrito.
+    // media: adicionar imagens/vídeos em /public/projects/carnes-e-cia/ (na ordem desejada).
+    media: [],
+  },
+  {
+    name: "Argos",
+    description: {
+      "pt-BR":
+        "Assistente pessoal com memória de longo prazo, construído como servidor MCP: guarda o que importa sobre a casa, os equipamentos, os cães e a rotina — e cobra o que precisa ser feito. Em desenvolvimento.",
+      en: "A personal assistant with long-term memory, built as an MCP server: it keeps track of what matters about the home, equipment, dogs and routine — and reminds you of what needs to be done. In development.",
+    },
+    longDescription: {
+      "pt-BR":
+        "Servidor MCP (Model Context Protocol) em TypeScript que dá memória de longo prazo a um assistente de IA. Não tem front-end nem API HTTP: um cliente MCP conversa com ele por stdio, e os dados ficam num SQLite local. As ferramentas cobrem fatos datados com origem e validade (lembrar, buscar e esquecer), entidades do mundo real (equipamentos, cães, veículos) e compromissos com dois modos de recorrência, que podem ser concluídos (inclusive de forma retroativa) ou adiados, além de uma fila de avisos para um loop proativo que entrega cada lembrete sem repetir. Hoje o cliente é o Claude Code; a próxima etapa liga um agente com Telegram e voz para o assistente puxar a conversa sozinho. Privacidade em primeiro lugar: tudo roda na máquina local, o banco nunca é versionado e backup que sai da máquina vai cifrado.",
+      en: "A TypeScript MCP (Model Context Protocol) server that gives an AI assistant long-term memory. There is no front end or HTTP API: an MCP client talks to it over stdio, and data lives in a local SQLite database. Its tools cover dated facts with source and validity (remember, search and forget), real-world entities (equipment, dogs, vehicles) and commitments with two recurrence modes that can be completed (even retroactively) or postponed, plus a notification queue for a proactive loop that delivers each reminder without repeating it. Today the client is Claude Code; the next step connects an agent with Telegram and voice so the assistant can start the conversation on its own. Privacy first: everything runs on the local machine, the database is never committed and any backup that leaves the machine is encrypted.",
+    },
+    stack: ["TypeScript", "Node.js", "MCP SDK", "SQLite", "Zod", "Claude"],
+    // Sem liveUrl: roda localmente, sem deploy. repoUrl: adicionar quando o repositório for público.
+    // media: adicionar imagens/vídeos em /public/projects/argos/ (na ordem desejada).
+    media: [],
+  },
 ];

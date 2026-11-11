@@ -37,8 +37,13 @@ export const pt: Dictionary = {
   },
   projects: {
     placeholder: "Projetos selecionados em breve.",
-    viewRepo: "Repositório",
-    viewLive: "Ver online",
+    viewImages: "Ver imagens",
+    gallery: {
+      close: "Fechar",
+      previous: "Imagem anterior",
+      next: "Próxima imagem",
+      counter: "{current} de {total}",
+    },
   },
   contact: {
     subtitle: "Aberto a oportunidades remotas com times internacionais. Vamos conversar!",

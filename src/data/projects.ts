@@ -5,8 +5,11 @@ export type ProjectMedia = {
   type: "image" | "video";
   /** Caminho em /public. Ex.: "/projects/life-manager/01-dashboard.png". */
   src: string;
-  /** Legenda / texto alternativo (opcional, bilíngue). */
-  alt?: Localized;
+  /** Dimensões originais em px (usadas para reservar espaço e otimizar a imagem). */
+  width: number;
+  height: number;
+  /** Legenda / texto alternativo (bilíngue). */
+  alt: Localized;
 };
 
 export type Project = {
@@ -16,10 +19,6 @@ export type Project = {
   /** Descrição completa, para uma visão de detalhe futura (opcional). */
   longDescription?: Localized;
   stack: string[];
-  /** URL do repositório (opcional). */
-  repoUrl?: string;
-  /** URL do deploy/demo (opcional). */
-  liveUrl?: string;
   /**
    * Mídias (imagens/vídeos) exibidas na ordem deste array.
    * Coloque os arquivos em /public/projects/<slug>/ e referencie aqui.
@@ -56,10 +55,7 @@ export const projects: Project[] = [
       "Vercel Blob",
       "Jest",
     ],
-    liveUrl: "https://life-manager-app-six.vercel.app",
-    // Repositório do front; a API é pública em github.com/marcosmatosteodoro/life-manager-api.
-    repoUrl: "https://github.com/marcosmatosteodoro/life-manager-app",
-    // media: adicionar imagens/vídeos em /public/projects/life-manager/ (na ordem desejada).
+    // media: imagens pendentes — adicionar em /public/projects/life-manager/ (na ordem desejada).
     media: [],
   },
   {
@@ -88,40 +84,56 @@ export const projects: Project[] = [
       "Jest",
       "Docker",
     ],
-    liveUrl: "https://diario-de-classe-frontend.vercel.app/",
-    // repoUrl: adicionar quando o repositório for público.
-    // media: adicionar imagens/vídeos em /public/projects/diario-de-classe/ (na ordem desejada).
-    media: [],
-  },
-  {
-    name: "3D Real Estate Immersion",
-    description: {
-      "pt-BR":
-        "Plataforma de imersão 3D para compra e venda de imóveis (MetaOriginal): orquestra web, mobile, um servidor 3D em tempo real (WebSocket + WebRTC) e apps de apresentação — white-label por cliente. Atuei como Tech Lead.",
-      en: "3D immersion platform for real estate buying & selling (MetaOriginal): orchestrates web, mobile, a real-time 3D server (WebSocket + WebRTC) and presentation apps — white-labeled per client. I worked as Tech Lead.",
-    },
-    longDescription: {
-      "pt-BR":
-        "Plataforma de imersão 3D para compra e venda de imóveis desenvolvida na MetaOriginal, onde atuei como Tech Lead. Não tinha nome fixo: cada cliente recebia um app white-label com a própria marca. Era uma orquestração de várias aplicações em simultâneo: (1) Web — dashboard em Ruby on Rails (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) que concentrava toda a regra de negócio (sessões, clientes, valores de imóveis, configurações 3D personalizadas) com permissões por papel (corretor, administrador, super-administrador) e envio de e-mails; (2) Mobile — app em Flutter para o corretor apresentar a experiência 3D, conectando-se ao back-end e ao 3D separadamente; (3) Servidor 3D — serviço WebSocket em Node.js que ligava/desligava o 3D, selecionava a cena e as configurações, autenticava com o back-end e estabelecia a conexão WebRTC; (4) Apresentação — app Electron (React + TypeScript) exclusivo para o CEO apresentar a experiência, comunicando-se com o WebSocket e exibindo o 3D com configurações de apresentação; (5) Landing page — página em PHP + WordPress para o cliente rever, de forma interativa e personalizada, as fotos da sua imersão 3D junto de mensagens do corretor. Infra na Digital Ocean (armazenamento de fotos/vídeos, CDN e servidores) com CI/CD robusto no GitHub. A aplicação foi descontinuada.",
-      en: "3D immersion platform for real estate buying & selling built at MetaOriginal, where I worked as Tech Lead. It had no fixed name: each client got a white-label app under their own brand. It was an orchestration of several apps running together: (1) Web — a Ruby on Rails dashboard (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) holding all business rules (sessions, clients, property values, custom 3D settings) with role-based permissions (broker, admin, super-admin) and email sending; (2) Mobile — a Flutter app for brokers to present the 3D experience, connecting to the back-end and the 3D separately; (3) 3D server — a Node.js WebSocket service that turned the 3D on/off, selected the scene and settings, authenticated with the back-end and established the WebRTC connection; (4) Presentation — a dedicated Electron app (React + TypeScript) for the CEO to present the experience, talking to the WebSocket and rendering the 3D with presentation settings; (5) Landing page — a PHP + WordPress page where the client could interactively review the photos from their 3D immersion along with the broker's messages. Infrastructure on Digital Ocean (photo/video storage, CDN and servers) with strong CI/CD on GitHub. The application has been discontinued.",
-    },
-    stack: [
-      "Ruby on Rails",
-      "PostgreSQL",
-      "Node.js",
-      "WebSocket",
-      "WebRTC",
-      "Flutter",
-      "Electron",
-      "React",
-      "TypeScript",
-      "PHP / WordPress",
-      "Digital Ocean",
-      "CI/CD",
+    media: [
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/01-login.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Tela de login", en: "Login screen" },
+      },
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/02-painel.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Painel com totais e filtros de aulas",
+          en: "Dashboard with totals and class filters",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/03-alunos.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Lista de alunos", en: "Student list" },
+      },
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/04-aulas.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Lista de aulas com filtros", en: "Class list with filters" },
+      },
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/05-contratos.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Lista de contratos com filtros", en: "Contract list with filters" },
+      },
+      {
+        type: "image",
+        src: "/projects/diario-de-classe/06-professores.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Lista de professores com permissões",
+          en: "Teacher list with permissions",
+        },
+      },
     ],
-    // Sem liveUrl/repoUrl: aplicação descontinuada e código proprietário do cliente.
-    // media: adicionar imagens/vídeos em /public/projects/3d-real-estate-immersion/ (na ordem desejada).
-    media: [],
   },
   {
     name: "Mnemônicos",
@@ -149,10 +161,55 @@ export const projects: Project[] = [
       "Zod",
       "Jest",
     ],
-    liveUrl: "https://mnemonicos-frontend.vercel.app",
-    // repoUrl: adicionar quando o repositório for público.
-    // media: adicionar imagens/vídeos em /public/projects/mnemonicos/ (na ordem desejada).
-    media: [],
+    media: [
+      {
+        type: "image",
+        src: "/projects/mnemonicos/01-pagina-inicial.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Página inicial com as técnicas do acervo",
+          en: "Home page with the library's techniques",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/mnemonicos/02-painel.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Painel estratégico com tempo por etapa e conclusão por módulo",
+          en: "Strategic dashboard with time per stage and completion by module",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/mnemonicos/03-conteudos.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Lista de conteúdos brutos", en: "Raw content list" },
+      },
+      {
+        type: "image",
+        src: "/projects/mnemonicos/04-detalhe-do-conteudo.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Detalhe do conteúdo com fonte normativa e exportações",
+          en: "Content detail with legal source and exports",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/mnemonicos/05-quebra-da-regra.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Quebra da regra em conceito, ação, objeto, condição e exceção",
+          en: "Rule breakdown into concept, action, object, condition and exception",
+        },
+      },
+    ],
   },
   {
     name: "Carnes & Cia",
@@ -180,8 +237,63 @@ export const projects: Project[] = [
       "Zod",
       "Vitest",
     ],
-    // Sem liveUrl/repoUrl: app de uso interno do cliente, com acesso restrito.
-    // media: adicionar imagens/vídeos em /public/projects/carnes-e-cia/ (na ordem desejada).
+    media: [
+      {
+        type: "image",
+        src: "/projects/carnes-e-cia/01-inicio.png",
+        width: 390,
+        height: 844,
+        alt: {
+          "pt-BR": "Início: vendas do mês, previsão e mais vendidos",
+          en: "Home: month's sales, forecast and best sellers",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/carnes-e-cia/02-previsao-do-mes.png",
+        width: 390,
+        height: 844,
+        alt: {
+          "pt-BR": "Previsão do mês comparada aos anos anteriores",
+          en: "Monthly forecast compared with previous years",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/carnes-e-cia/03-proximos-12-meses.png",
+        width: 390,
+        height: 844,
+        alt: { "pt-BR": "Previsão dos próximos 12 meses", en: "Forecast for the next 12 months" },
+      },
+    ],
+  },
+  {
+    name: "3D Real Estate Immersion",
+    description: {
+      "pt-BR":
+        "Plataforma de imersão 3D para compra e venda de imóveis (MetaOriginal): orquestra web, mobile, um servidor 3D em tempo real (WebSocket + WebRTC) e apps de apresentação — white-label por cliente. Atuei como Tech Lead.",
+      en: "3D immersion platform for real estate buying & selling (MetaOriginal): orchestrates web, mobile, a real-time 3D server (WebSocket + WebRTC) and presentation apps — white-labeled per client. I worked as Tech Lead.",
+    },
+    longDescription: {
+      "pt-BR":
+        "Plataforma de imersão 3D para compra e venda de imóveis desenvolvida na MetaOriginal, onde atuei como Tech Lead. Não tinha nome fixo: cada cliente recebia um app white-label com a própria marca. Era uma orquestração de várias aplicações em simultâneo: (1) Web — dashboard em Ruby on Rails (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) que concentrava toda a regra de negócio (sessões, clientes, valores de imóveis, configurações 3D personalizadas) com permissões por papel (corretor, administrador, super-administrador) e envio de e-mails; (2) Mobile — app em Flutter para o corretor apresentar a experiência 3D, conectando-se ao back-end e ao 3D separadamente; (3) Servidor 3D — serviço WebSocket em Node.js que ligava/desligava o 3D, selecionava a cena e as configurações, autenticava com o back-end e estabelecia a conexão WebRTC; (4) Apresentação — app Electron (React + TypeScript) exclusivo para o CEO apresentar a experiência, comunicando-se com o WebSocket e exibindo o 3D com configurações de apresentação; (5) Landing page — página em PHP + WordPress para o cliente rever, de forma interativa e personalizada, as fotos da sua imersão 3D junto de mensagens do corretor. Infra na Digital Ocean (armazenamento de fotos/vídeos, CDN e servidores) com CI/CD robusto no GitHub. A aplicação foi descontinuada.",
+      en: "3D immersion platform for real estate buying & selling built at MetaOriginal, where I worked as Tech Lead. It had no fixed name: each client got a white-label app under their own brand. It was an orchestration of several apps running together: (1) Web — a Ruby on Rails dashboard (HTML, SCSS, jQuery, Bootstrap, PostgreSQL) holding all business rules (sessions, clients, property values, custom 3D settings) with role-based permissions (broker, admin, super-admin) and email sending; (2) Mobile — a Flutter app for brokers to present the 3D experience, connecting to the back-end and the 3D separately; (3) 3D server — a Node.js WebSocket service that turned the 3D on/off, selected the scene and settings, authenticated with the back-end and established the WebRTC connection; (4) Presentation — a dedicated Electron app (React + TypeScript) for the CEO to present the experience, talking to the WebSocket and rendering the 3D with presentation settings; (5) Landing page — a PHP + WordPress page where the client could interactively review the photos from their 3D immersion along with the broker's messages. Infrastructure on Digital Ocean (photo/video storage, CDN and servers) with strong CI/CD on GitHub. The application has been discontinued.",
+    },
+    stack: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Node.js",
+      "WebSocket",
+      "WebRTC",
+      "Flutter",
+      "Electron",
+      "React",
+      "TypeScript",
+      "PHP / WordPress",
+      "Digital Ocean",
+      "CI/CD",
+    ],
+    // Sem mídia: aplicação descontinuada e código proprietário do cliente.
     media: [],
   },
   {
@@ -197,8 +309,7 @@ export const projects: Project[] = [
       en: "A TypeScript MCP (Model Context Protocol) server that gives an AI assistant long-term memory. There is no front end or HTTP API: an MCP client talks to it over stdio, and data lives in a local SQLite database. Its tools cover dated facts with source and validity (remember, search and forget), real-world entities (equipment, dogs, vehicles) and commitments with two recurrence modes that can be completed (even retroactively) or postponed, plus a notification queue for a proactive loop that delivers each reminder without repeating it. Today the client is Claude Code; the next step connects an agent with Telegram and voice so the assistant can start the conversation on its own. Privacy first: everything runs on the local machine, the database is never committed and any backup that leaves the machine is encrypted.",
     },
     stack: ["TypeScript", "Node.js", "MCP SDK", "SQLite", "Zod", "Claude"],
-    // Sem liveUrl: roda localmente, sem deploy. repoUrl: adicionar quando o repositório for público.
-    // media: adicionar imagens/vídeos em /public/projects/argos/ (na ordem desejada).
+    // Sem mídia: servidor MCP sem interface própria, roda localmente.
     media: [],
   },
 ];

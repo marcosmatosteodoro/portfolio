@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LocaleToggle } from "@/components/ui/LocaleToggle";
+import { profile } from "@/data/profile";
 
 const NAV_ITEMS = [
   { id: "experience", key: "experience" },
@@ -21,7 +22,7 @@ export function Header() {
     <header className="border-card-border bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="text-accent font-mono text-lg font-bold tracking-tight">
-          MT<span className="text-foreground">.</span>
+          {profile.initials}
         </a>
 
         {/* Navegação desktop */}

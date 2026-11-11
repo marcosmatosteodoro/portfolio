@@ -22,10 +22,10 @@ export const profile = {
     en: "Former Tech Lead who ships web and AI-powered products end to end — from database to UI — with Node.js, TypeScript, React and PostgreSQL. I keep things simple: clean architecture, automated tests and code that's easy to change.",
   } satisfies Localized,
 
-  /** Recrutador de fora filtra por fuso: o Brasil (UTC−3) cobre o horário comercial dos EUA. */
+  /** Recrutador de fora filtra por fuso: mostrar o UTC no topo. */
   location: {
-    "pt-BR": "Remoto · Brasil (UTC−3) · horário compatível com os EUA",
-    en: "Remote · Brazil (UTC−3) · overlaps with US business hours",
+    "pt-BR": "Remoto · Brasil (UTC−3)",
+    en: "Remote · Brazil (UTC−3)",
   } satisfies Localized,
 
   /** Estatísticas exibidas no Hero — só fatos do CV, sem número inventado. */

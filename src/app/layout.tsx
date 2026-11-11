@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-ten-psi-gcohgte9fy.vercel.app"),
   title: "Marcos Teodoro — Senior Full-Stack Software Engineer",
   description:
-    "Marcos Teodoro — Senior Full-Stack Software Engineer and former Tech Lead. Node.js, TypeScript, React, Next.js, PostgreSQL and AI integrations. Remote from Brazil (UTC−3), overlapping with US business hours.",
+    "Marcos Teodoro — Senior Full-Stack Software Engineer and former Tech Lead. Node.js, TypeScript, React, Next.js, PostgreSQL and AI integrations. Remote from Brazil (UTC−3).",
   keywords: [
     "Marcos Teodoro",
     "Full-Stack Developer",

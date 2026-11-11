@@ -55,8 +55,96 @@ export const projects: Project[] = [
       "Vercel Blob",
       "Jest",
     ],
-    // media: imagens pendentes — adicionar em /public/projects/life-manager/ (na ordem desejada).
-    media: [],
+    // Prints tirados de um ambiente local com dados fictícios (nenhum dado pessoal).
+    media: [
+      {
+        type: "image",
+        src: "/projects/life-manager/01-pagina-inicial.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Página inicial com visão geral e pendências do dia",
+          en: "Home page with an overview and today's tasks",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/02-pagina-inicial-tema-escuro.png",
+        width: 1440,
+        height: 900,
+        alt: { "pt-BR": "Página inicial no tema escuro", en: "Home page in dark theme" },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/03-artigos-correcao-por-ia.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Artigos de inglês com o resumo corrigido pela IA e nota",
+          en: "English articles with the AI-corrected summary and score",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/04-flashcards-combinacao.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Flashcards no modo Combinação (jogo de pares)",
+          en: "Flashcards in Match mode (pairs game)",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/05-peso-e-imc.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Controle de peso com IMC e faixa saudável",
+          en: "Weight tracking with BMI and healthy range",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/06-gastos.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Gastos do mês por categoria",
+          en: "Monthly expenses by category",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/07-painel-dos-caes.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Painel dos cães com passeios e peso",
+          en: "Dogs dashboard with walks and weight",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/08-candidaturas.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Candidaturas a vagas com status",
+          en: "Job applications with status",
+        },
+      },
+      {
+        type: "image",
+        src: "/projects/life-manager/09-problemas.png",
+        width: 1440,
+        height: 900,
+        alt: {
+          "pt-BR": "Problemas a resolver com prioridade e categoria",
+          en: "Problems to solve with priority and category",
+        },
+      },
+    ],
   },
   {
     name: "Diário de Classe",

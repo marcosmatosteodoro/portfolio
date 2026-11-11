@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-ten-psi-gcohgte9fy.vercel.app"),
   title: "Marcos Teodoro — Senior Full-Stack Software Engineer",
   description:
-    "Portfolio of Marcos Teodoro, Senior Full-Stack Software Engineer working with Node.js, TypeScript, React, Next.js and cloud technologies.",
+    "Marcos Teodoro — Senior Full-Stack Software Engineer and former Tech Lead. Node.js, TypeScript, React, Next.js, PostgreSQL and AI integrations. Remote from Brazil (UTC−3), overlapping with US business hours.",
   keywords: [
     "Marcos Teodoro",
     "Full-Stack Developer",
@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     "TypeScript",
     "React",
     "Next.js",
+    "PostgreSQL",
+    "Tech Lead",
+    "AI integrations",
+    "Remote",
   ],
   authors: [{ name: "Marcos Teodoro" }],
   applicationName: "Marcos Teodoro — Portfolio",
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marcos Teodoro — Senior Full-Stack Software Engineer",
     description:
-      "Senior Full-Stack Software Engineer — Node.js, TypeScript, React, Next.js and cloud.",
+      "Senior Full-Stack Software Engineer and former Tech Lead — Node.js, TypeScript, React, Next.js, PostgreSQL and AI. Remote, UTC−3.",
     type: "website",
     url: "/",
   },

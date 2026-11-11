@@ -4,7 +4,7 @@ import type { Localized } from "./profile";
 export type Degree = {
   institution: string;
   title: Localized;
-  period: string;
+  period: Localized;
   details: Localized;
 };
 
@@ -19,9 +19,9 @@ export const degree: Degree = {
   institution: "UNOPAR — Universidade Norte do Paraná",
   title: {
     "pt-BR": "Bacharelado em Engenharia de Software",
-    en: "Bachelor's in Software Engineering",
+    en: "B.Sc. in Software Engineering",
   },
-  period: "2023 — 2027",
+  period: { "pt-BR": "2023 – previsão de conclusão em 2027", en: "2023 – Expected 2027" },
   details: {
     "pt-BR":
       "Arquitetura de Software, Engenharia de Requisitos, Modelagem UML, Banco de Dados, Estruturas de Dados, Algoritmos, Testes de Software, Segurança da Informação e DevOps básico.",
@@ -33,7 +33,7 @@ export const certifications: Certification[] = [
   {
     name: "Scrum Fundamentals Certified (SFC)",
     issuer: "SCRUMstudy",
-    issued: { "pt-BR": "Mar/2025", en: "Mar/2025" },
+    issued: { "pt-BR": "Mar 2025", en: "Mar 2025" },
     credentialId: "1073019",
   },
 ];
@@ -59,7 +59,10 @@ export const languages: Language[] = [
   },
   {
     name: { "pt-BR": "Inglês", en: "English" },
-    level: { "pt-BR": "Intermediário (B2)", en: "Intermediate (B2)" },
+    level: {
+      "pt-BR": "Intermediário avançado (B2) · uso profissional",
+      en: "Upper-Intermediate (B2) · professional working proficiency",
+    },
   },
 ];
 

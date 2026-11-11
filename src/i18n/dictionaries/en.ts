@@ -1,6 +1,5 @@
 export const en = {
   nav: {
-    about: "About",
     skills: "Skills",
     experience: "Experience",
     projects: "Projects",
@@ -11,11 +10,10 @@ export const en = {
     greeting: "Hi, I'm",
     ctaProjects: "View projects",
     ctaContact: "Get in touch",
-    downloadCv: "Download CV",
+    downloadCv: "Download resume",
   },
   sections: {
-    about: "About me",
-    skills: "Skills & Stack",
+    skills: "Skills",
     experience: "Experience",
     projects: "Projects",
     education: "Education & Certifications",
@@ -44,7 +42,8 @@ export const en = {
     },
   },
   contact: {
-    subtitle: "Open to remote opportunities with international teams. Let's talk!",
+    subtitle:
+      "Open to remote full-time roles with US and international teams. The fastest way to reach me is email.",
     email: "Email",
     whatsapp: "WhatsApp",
     linkedin: "LinkedIn",

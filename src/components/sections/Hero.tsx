@@ -22,6 +22,7 @@ export function Hero() {
             <p className="text-accent mt-2 text-lg font-semibold sm:text-xl">
               {profile.role[locale]}
             </p>
+            <p className="text-muted mt-2 text-sm">{profile.location[locale]}</p>
           </Reveal>
           <Reveal delay={240}>
             <p className="text-muted mt-5 text-base leading-relaxed">{profile.tagline[locale]}</p>

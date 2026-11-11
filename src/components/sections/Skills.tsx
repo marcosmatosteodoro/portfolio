@@ -12,8 +12,16 @@ export function Skills() {
     <Section id="skills" title={t.sections.skills}>
       <div className="grid gap-6 sm:grid-cols-2">
         {skillGroups.map((group, i) => (
-          <Reveal key={group.category.en} delay={i * 60}>
-            <div className="border-card-border bg-card h-full rounded-lg border p-5">
+          <Reveal
+            key={group.category.en}
+            delay={i * 60}
+            className={group.highlight ? "sm:col-span-2" : ""}
+          >
+            <div
+              className={`bg-card h-full rounded-lg border p-5 ${
+                group.highlight ? "border-accent/40" : "border-card-border"
+              }`}
+            >
               <h3 className="text-accent mb-3 text-sm font-semibold tracking-wide uppercase">
                 {group.category[locale]}
               </h3>
@@ -21,7 +29,11 @@ export function Skills() {
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="border-card-border text-foreground/90 rounded-full border px-3 py-1 text-xs font-medium"
+                    className={
+                      group.highlight
+                        ? "border-accent/40 text-foreground rounded-full border px-3.5 py-1.5 text-sm font-semibold"
+                        : "border-card-border text-foreground/90 rounded-full border px-3 py-1 text-xs font-medium"
+                    }
                   >
                     {item}
                   </li>

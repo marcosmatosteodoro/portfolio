@@ -2,7 +2,6 @@ import type { Dictionary } from "./en";
 
 export const pt: Dictionary = {
   nav: {
-    about: "Sobre",
     skills: "Skills",
     experience: "Experiência",
     projects: "Projetos",
@@ -16,8 +15,7 @@ export const pt: Dictionary = {
     downloadCv: "Baixar CV",
   },
   sections: {
-    about: "Sobre mim",
-    skills: "Skills & Stack",
+    skills: "Habilidades",
     experience: "Experiência",
     projects: "Projetos",
     education: "Formação & Certificações",
@@ -46,7 +44,8 @@ export const pt: Dictionary = {
     },
   },
   contact: {
-    subtitle: "Aberto a oportunidades remotas com times internacionais. Vamos conversar!",
+    subtitle:
+      "Aberto a vagas remotas em tempo integral com times dos EUA e de outros países. O jeito mais rápido de falar comigo é por e-mail.",
     email: "E-mail",
     whatsapp: "WhatsApp",
     linkedin: "LinkedIn",

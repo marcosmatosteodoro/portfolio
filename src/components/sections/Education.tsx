@@ -19,7 +19,7 @@ export function Education() {
             </h3>
             <p className="font-semibold">{degree.title[locale]}</p>
             <p className="text-muted text-sm">{degree.institution}</p>
-            <p className="text-muted font-mono text-xs">{degree.period}</p>
+            <p className="text-muted font-mono text-xs">{degree.period[locale]}</p>
             <p className="text-muted mt-3 text-sm leading-relaxed">{degree.details[locale]}</p>
           </div>
         </Reveal>

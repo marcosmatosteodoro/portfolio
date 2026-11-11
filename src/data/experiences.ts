@@ -9,111 +9,116 @@ export type Experience = {
   highlights: Record<Locale, string[]>;
 };
 
-/** Experiências da mais recente para a mais antiga. */
+/**
+ * Experiências da mais recente para a mais antiga.
+ * Bullets no padrão de currículo americano: verbo de ação + o que foi feito + resultado.
+ * Fonte dos fatos: CV em /public/cv e planejamento/conteudo.md — não inventar números.
+ */
 export const experiences: Experience[] = [
   {
-    company: "Tech For TI · Auto Avaliar",
+    company: "Auto Avaliar (via Tech For TI)",
     role: {
-      "pt-BR": "Desenvolvedor Full Stack Sênior",
-      en: "Senior Full Stack Developer",
+      "pt-BR": "Desenvolvedor Full-Stack Sênior",
+      en: "Senior Full-Stack Developer",
     },
     period: {
-      "pt-BR": "Set/2025 — Atual",
-      en: "Sep/2025 — Present",
+      "pt-BR": "Set 2025 – atual",
+      en: "Sep 2025 – Present",
     },
-    location: { "pt-BR": "Remoto", en: "Remote" },
+    location: { "pt-BR": "Remoto · Brasil", en: "Remote · Brazil" },
     highlights: {
       "pt-BR": [
-        "Alocado no cliente Auto Avaliar, plataforma B2B líder no mercado automotivo brasileiro, em ambiente de alta escala com múltiplos times.",
-        "Desenvolvimento fullstack com Node.js, TypeScript, React e PHP.",
-        "Manutenção de sistemas legados em PHP, garantindo estabilidade e continuidade do negócio.",
-        "Aplicação de princípios de engenharia de software (SOLID, DRY e Design Patterns).",
-        "Forte foco em segurança, performance e escalabilidade; participação ativa em decisões técnicas.",
+        "Construo e mantenho sistemas críticos da principal plataforma B2B do mercado automotivo brasileiro, que conecta lojistas e empresas do setor na negociação de veículos, atuando com várias squads em ambiente de alta escala.",
+        "Entrego funcionalidades full-stack com Node.js, TypeScript, React e PHP, incluindo APIs e integrações com serviços internos e externos.",
+        "Mantenho os sistemas legados em PHP estáveis enquanto os melhoro aos poucos, garantindo a continuidade do negócio.",
+        "Participo das decisões técnicas e da melhoria contínua da qualidade do código, com foco em segurança, performance e escalabilidade.",
       ],
       en: [
-        "Allocated to the client Auto Avaliar, a leading B2B platform in Brazil's automotive market, in a high-scale, multi-team environment.",
-        "Fullstack development using Node.js, TypeScript, React and PHP.",
-        "Maintenance of legacy PHP systems, ensuring stability and business continuity.",
-        "Application of software engineering principles (SOLID, DRY and Design Patterns).",
-        "Strong focus on security, performance and scalability; active participation in technical decisions.",
+        "Build and maintain business-critical systems for Brazil's leading B2B automotive platform, which connects dealerships and industry players in vehicle trading, working across multiple squads in a high-scale environment.",
+        "Ship full-stack features with Node.js, TypeScript, React and PHP, including APIs and integrations with internal and external services.",
+        "Keep legacy PHP systems stable while improving them incrementally, protecting business continuity.",
+        "Contribute to technical decisions and continuous code-quality improvements, with a strong focus on security, performance and scalability.",
       ],
     },
   },
   {
     company: "MetaOriginal",
     role: {
-      "pt-BR": "Desenvolvedor Full Stack & Tech Lead",
-      en: "Full Stack Developer & Technical Lead",
+      "pt-BR": "Desenvolvedor Full-Stack & Tech Lead",
+      en: "Full-Stack Developer & Tech Lead",
     },
     period: {
-      "pt-BR": "Nov/2022 — Set/2025",
-      en: "Nov/2022 — Sep/2025",
+      "pt-BR": "Nov 2022 – Set 2025",
+      en: "Nov 2022 – Sep 2025",
     },
-    location: { "pt-BR": "Remoto (Miami, EUA)", en: "Remote (Miami, USA)" },
+    location: {
+      "pt-BR": "Remoto · Miami, EUA (empresa americana)",
+      en: "Remote · Miami, FL (US company)",
+    },
     highlights: {
       "pt-BR": [
-        "Promovido a Tech Lead em 1 ano, liderando times de front-end, back-end, mobile, QA e integração 3D.",
-        "Redesign completo do front-end principal (Ruby + Hotwire Turbo + Stimulus) sem trocar a stack legada.",
-        "Plataforma de reunião em tempo real (estilo Google Meet) com streaming 3D 4K — Node.js, TypeScript, React, Next.js, OAuth, PubNub e Dolby.",
-        "Sistema para corretores: back-end Ruby (RSpec) + Flutter (mobile) + Electron (desktop React/TS) + Firebase.",
-        "Cultura de testes: unit/integração em 100% dos projetos (Jest, RSpec, E2E). CI/CD no GitHub com GitFlow (Digital Ocean + Linode).",
+        "Promovido a Tech Lead em um ano; liderei os times de front-end, back-end, mobile, QA e integração 3D e fui responsável pelo ciclo completo, da arquitetura ao deploy.",
+        "Construí uma plataforma de reuniões em tempo real (estilo Google Meet) com streaming 3D em 4K usando Node.js, TypeScript, React e Next.js, integrando OAuth, PubNub (chat e vídeo) e Dolby (áudio premium).",
+        "Reduzi o custo de manutenção do app mobile ao substituir o app em Flutter por um app em WebView (Ruby + React).",
+        "Redesenhei o front-end principal (Ruby, Hotwire Turbo, Stimulus), melhorando usabilidade e performance sem reescrever a stack, com testes em Jest para evitar regressões.",
+        "Construí um sistema multiplataforma para corretores de imóveis: API em Ruby (RSpec), app mobile em Flutter, app desktop em Electron (React/TypeScript) e Firebase para sincronização em tempo real.",
+        "Defini os padrões de engenharia do time: testes unitários e de integração em 100% dos projetos, pipelines de CI/CD no GitHub com GitFlow, code review e guias de código para React, TypeScript e Ruby.",
       ],
       en: [
-        "Promoted to Tech Lead in 1 year, leading front-end, back-end, mobile, QA and 3D integration teams.",
-        "Complete redesign of the main front-end (Ruby + Hotwire Turbo + Stimulus) without changing the legacy stack.",
-        "Real-time meeting platform (Google Meet style) with 4K 3D streaming — Node.js, TypeScript, React, Next.js, OAuth, PubNub and Dolby.",
-        "Real estate agents system: Ruby back-end (RSpec) + Flutter (mobile) + Electron (desktop React/TS) + Firebase.",
-        "Testing culture: unit/integration in 100% of projects (Jest, RSpec, E2E). CI/CD on GitHub with GitFlow (Digital Ocean + Linode).",
+        "Promoted to Tech Lead within a year; led the front-end, back-end, mobile, QA and 3D integration teams and owned the full cycle, from architecture to deployment.",
+        "Built a real-time meeting platform (Google Meet style) with 4K 3D streaming using Node.js, TypeScript, React and Next.js, integrating OAuth, PubNub (chat and video) and Dolby (premium audio).",
+        "Cut mobile maintenance costs by replacing the Flutter app with a WebView-based app (Ruby + React).",
+        "Redesigned the main front-end (Ruby, Hotwire Turbo, Stimulus) for better usability and performance without a stack rewrite, adding Jest tests to prevent regressions.",
+        "Built a multi-platform system for real estate agents: a Ruby API (RSpec), a Flutter mobile app, an Electron desktop app (React/TypeScript) and Firebase for real-time sync.",
+        "Set the team's engineering standards: unit and integration tests on 100% of projects, CI/CD pipelines on GitHub with GitFlow, code reviews and coding guidelines for React, TypeScript and Ruby.",
       ],
     },
   },
   {
     company: "EWIGE",
     role: {
-      "pt-BR": "Desenvolvedor Web Full Stack PHP",
-      en: "PHP Full Stack Web Developer",
+      "pt-BR": "Desenvolvedor Full-Stack (PHP)",
+      en: "Full-Stack Developer (PHP)",
     },
     period: {
-      "pt-BR": "Fev/2022 — Set/2023",
-      en: "Feb/2022 — Sep/2023",
+      "pt-BR": "Fev 2022 – Set 2023",
+      en: "Feb 2022 – Sep 2023",
     },
-    location: { "pt-BR": "Remoto", en: "Remote" },
+    location: { "pt-BR": "Remoto · Brasil", en: "Remote · Brazil" },
     highlights: {
       "pt-BR": [
-        "Plataformas EAD em Moodle (PHP) para instituições como Universidade Metodista, FGV e PM-SP.",
-        "Projeto Laravel + React/Next.js: construção de APIs e interfaces modernas; sistema de aviação em PHP puro.",
-        "Gestão de bancos MySQL, SQL Server, PostgreSQL e MariaDB; pipelines de ETL e relatórios de grande volume (TB+).",
-        "Reconhecimento facial via Azure Cognitive Services (JavaScript + PHP + API). Versionamento com Git e Docker.",
+        "Desenvolvi e dei suporte a plataformas de ensino a distância em Moodle (PHP) para instituições como Universidade Metodista, FGV e Polícia Militar de São Paulo (PM-SP).",
+        "Construí APIs e interfaces modernas em um projeto Laravel + React/Next.js e um sistema de cadastro para aviação em PHP puro.",
+        "Criei pipelines automatizados de ETL, procedures e views para relatórios na escala de terabytes em MySQL, SQL Server, PostgreSQL e MariaDB.",
+        "Implementei autenticação por reconhecimento facial com Azure Cognitive Services (captura em JavaScript e integração em PHP via API).",
       ],
       en: [
-        "Moodle (PHP) distance-learning platforms for institutions such as Universidade Metodista, FGV and PM-SP.",
-        "Laravel + React/Next.js project: building modern APIs and interfaces; aviation system in pure PHP.",
-        "Management of MySQL, SQL Server, PostgreSQL and MariaDB databases; ETL pipelines and large-volume (TB+) reports.",
-        "Facial recognition via Azure Cognitive Services (JavaScript + PHP + API). Version control with Git and Docker.",
+        "Developed and supported Moodle (PHP) e-learning platforms for institutions such as Universidade Metodista, FGV and the São Paulo Military Police (PM-SP).",
+        "Built APIs and modern interfaces in a Laravel + React/Next.js project, plus an aviation registration system in plain PHP.",
+        "Built automated ETL pipelines, stored procedures and views for terabyte-scale reports across MySQL, SQL Server, PostgreSQL and MariaDB.",
+        "Implemented facial-recognition authentication with Azure Cognitive Services (JavaScript image capture and PHP integration via API).",
       ],
     },
   },
   {
     company: "Polisystem",
     role: {
-      "pt-BR": "Suporte Técnico (Estágio)",
-      en: "Technical Support (Internship)",
+      "pt-BR": "Estagiário de Suporte Técnico",
+      en: "Technical Support Intern",
     },
     period: {
-      "pt-BR": "Dez/2021 — Fev/2022",
-      en: "Dec/2021 — Feb/2022",
+      "pt-BR": "Dez 2021 – Fev 2022",
+      en: "Dec 2021 – Feb 2022",
     },
     location: { "pt-BR": "Salvador, BA", en: "Salvador, Brazil" },
     highlights: {
       "pt-BR": [
-        "Suporte técnico especializado para sistema corporativo em .NET.",
-        "Análise e resolução de problemas em produção.",
-        "Treinamento intensivo em .NET para transição para a área de programação.",
+        "Dei suporte especializado a um sistema corporativo em .NET, analisando e resolvendo problemas em produção.",
+        "Concluí um treinamento intensivo de desenvolvimento em .NET para migrar para a engenharia de software.",
       ],
       en: [
-        "Specialized technical support for a corporate .NET system.",
-        "Analysis and resolution of production issues.",
-        "Intensive .NET training for transition into development.",
+        "Provided specialized support for a corporate .NET system, analyzing and resolving production issues.",
+        "Completed intensive .NET development training to move into software engineering.",
       ],
     },
   },

@@ -15,46 +15,37 @@ export const profile = {
     en: "Senior Full-Stack Software Engineer",
   } satisfies Localized,
 
+  /** Frase de abertura do Hero: quem sou + o que entrego + com o quê (substitui a antiga seção Sobre). */
   tagline: {
     "pt-BR":
-      "Construo aplicações web escaláveis com Node.js, TypeScript, React e cloud. Filosofia “less is more”: soluções simples, sustentáveis e bem estruturadas.",
-    en: "I build scalable web applications with Node.js, TypeScript, React and cloud. “Less is more” philosophy: simple, maintainable and well-structured solutions.",
+      "Ex-Tech Lead que entrega produtos web e com IA de ponta a ponta — do banco de dados à interface — com Node.js, TypeScript, React e PostgreSQL. Prefiro o simples: arquitetura limpa, testes automatizados e código fácil de mudar.",
+    en: "Former Tech Lead who ships web and AI-powered products end to end — from database to UI — with Node.js, TypeScript, React and PostgreSQL. I keep things simple: clean architecture, automated tests and code that's easy to change.",
   } satisfies Localized,
 
+  /** Recrutador de fora filtra por fuso: o Brasil (UTC−3) cobre o horário comercial dos EUA. */
   location: {
-    "pt-BR": "Remoto · Brasil",
-    en: "Remote · Brazil",
+    "pt-BR": "Remoto · Brasil (UTC−3) · horário compatível com os EUA",
+    en: "Remote · Brazil (UTC−3) · overlaps with US business hours",
   } satisfies Localized,
 
-  /** Estatísticas exibidas no Hero. */
+  /** Estatísticas exibidas no Hero — só fatos do CV, sem número inventado. */
   stats: [
     {
       value: "4+",
-      label: { "pt-BR": "anos de experiência", en: "years of experience" },
+      label: { "pt-BR": "anos em software de produção", en: "years shipping production software" },
     },
     {
-      value: "4",
-      label: { "pt-BR": "empresas", en: "companies" },
+      value: "5",
+      label: { "pt-BR": "times liderados como Tech Lead", en: "teams led as Tech Lead" },
     },
     {
-      value: "40+",
-      label: { "pt-BR": "tecnologias", en: "technologies" },
+      value: "~3",
+      label: {
+        "pt-BR": "anos remoto em empresa americana",
+        en: "years remote at a US company",
+      },
     },
   ] satisfies { value: string; label: Localized }[],
-
-  /** Bio em parágrafos (usada na seção Sobre). */
-  bio: {
-    "pt-BR": [
-      "Engenheiro de Software Full-Stack Sênior com mais de 4 anos de experiência projetando e construindo aplicações web escaláveis com Node.js, TypeScript, React, Python, PostgreSQL e tecnologias cloud.",
-      "Experiência em integrações de IA (LLMs), APIs REST, sistemas distribuídos, autenticação, gateways de pagamento e pipelines de CI/CD. Já atuei como líder técnico, coordenando times de front-end, back-end, mobile e QA sem abrir mão do trabalho hands-on.",
-      "Apaixonado por arquitetura de software, clean code e performance. Busco oportunidades remotas com times internacionais onde eu possa construir software de alto impacto.",
-    ],
-    en: [
-      "Senior Full-Stack Software Engineer with 4+ years of experience designing and building scalable web applications using Node.js, TypeScript, React, Python, PostgreSQL and cloud technologies.",
-      "Experienced in AI integrations (LLMs), REST APIs, distributed systems, authentication, payment gateways and CI/CD pipelines. I've worked as a technical lead, coordinating front-end, back-end, mobile and QA teams while staying hands-on.",
-      "Passionate about software architecture, clean code and performance. Seeking remote opportunities with international teams where I can build high-impact software.",
-    ],
-  } satisfies Record<Locale, string[]>,
 
   contacts: {
     email: "marcosmatosteodoro@gmail.com",

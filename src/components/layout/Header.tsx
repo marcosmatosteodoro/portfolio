@@ -6,10 +6,9 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LocaleToggle } from "@/components/ui/LocaleToggle";
 
 const NAV_ITEMS = [
-  { id: "about", key: "about" },
-  { id: "skills", key: "skills" },
   { id: "experience", key: "experience" },
   { id: "projects", key: "projects" },
+  { id: "skills", key: "skills" },
   { id: "education", key: "education" },
   { id: "contact", key: "contact" },
 ] as const;

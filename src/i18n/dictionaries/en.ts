@@ -35,8 +35,13 @@ export const en = {
   },
   projects: {
     placeholder: "Selected projects are coming soon.",
-    viewRepo: "Repository",
-    viewLive: "Live demo",
+    viewImages: "View images",
+    gallery: {
+      close: "Close",
+      previous: "Previous image",
+      next: "Next image",
+      counter: "{current} of {total}",
+    },
   },
   contact: {
     subtitle: "Open to remote opportunities with international teams. Let's talk!",

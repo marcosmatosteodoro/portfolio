@@ -4,6 +4,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { projects } from "@/data/projects";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { ProjectGallery } from "@/components/ui/ProjectGallery";
 
 export function Projects() {
   const { locale, t } = useLocale();
@@ -35,28 +36,11 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 flex gap-4 text-sm font-medium">
-                  {project.repoUrl && (
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent hover:underline"
-                    >
-                      {t.projects.viewRepo}
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent hover:underline"
-                    >
-                      {t.projects.viewLive}
-                    </a>
-                  )}
-                </div>
+                {project.media && project.media.length > 0 && (
+                  <div className="mt-4 flex gap-4 text-sm font-medium">
+                    <ProjectGallery projectName={project.name} media={project.media} />
+                  </div>
+                )}
               </article>
             </Reveal>
           ))}

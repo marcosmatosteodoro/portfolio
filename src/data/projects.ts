@@ -33,13 +33,13 @@ export const projects: Project[] = [
     name: "Life Manager",
     description: {
       "pt-BR":
-        "Painel pessoal full-stack para organizar saúde, estudos, hábitos e busca de emprego — com recursos de IA.",
-      en: "A full-stack personal dashboard to organize health, studies, habits and job hunting — powered by AI.",
+        "Painel pessoal full-stack para organizar saúde, estudos, finanças, cães, hábitos e busca de emprego — com recursos de IA.",
+      en: "A full-stack personal dashboard to organize health, studies, finances, dogs, habits and job hunting — powered by AI.",
     },
     longDescription: {
       "pt-BR":
-        "Aplicação web (PWA) full-stack de gestão pessoal que reúne, num só lugar, controle de peso e IMC, estudo de inglês com correção de textos por IA, flashcards com 3 modos de estudo, afazeres recorrentes, diário, conversores e acompanhamento de candidaturas a vagas — incluindo um buscador de vagas remotas e feedback do seu progresso gerado por IA.",
-      en: "A full-stack personal management web app (PWA) that brings together weight & BMI tracking, English study with AI-powered text correction, flashcards with 3 study modes, recurring to-dos, journaling, converters, and job-application tracking — including a remote-job search engine and AI-generated feedback on your progress.",
+        "Aplicação web (PWA) full-stack de gestão pessoal que reúne, num só lugar: controle de peso e IMC; estudo de inglês com correção de textos por IA e flashcards (com imagens) em 3 modos de estudo; finanças com gastos (foto do comprovante pela câmera, parcelas e análise por IA), gastos fixos e dívidas com controle de pagamentos; cuidado com os cães (passeios com locais, peso e painel); afazeres recorrentes, backlog e registro de problemas com gravação de áudio, prioridade e categorias; diário, diário de gratidão, pomodoro, cronômetro e conversores; e acompanhamento de candidaturas a vagas, com buscador de vagas remotas, conselheiro por IA e feedback do seu progresso. Inclui gestão de usuários com perfil de administrador, editor de tema com pré-visualização e limite de requisições nos endpoints de IA.",
+      en: "A full-stack personal management web app (PWA) that brings together: weight & BMI tracking; English study with AI-powered text correction and flashcards (with images) in 3 study modes; finances with expenses (receipt photo from the camera, installments and AI analysis), fixed expenses and debts with payment tracking; dog care (walks with locations, weight and a dashboard); recurring to-dos, a backlog and a problem log with audio recording, priorities and categories; journaling, a gratitude journal, pomodoro, stopwatch and converters; and job-application tracking, with a remote-job search engine, an AI advisor and AI-generated feedback on your progress. It also has user management with an admin role, a theme editor with live preview, and rate limiting on the AI endpoints.",
     },
     stack: [
       "Next.js 16",
@@ -53,10 +53,12 @@ export const projects: Project[] = [
       "PostgreSQL 16",
       "JWT",
       "OpenAI",
+      "Vercel Blob",
       "Jest",
     ],
     liveUrl: "https://life-manager-app-six.vercel.app",
-    // repoUrl: adicionar quando o repositório for público.
+    // Repositório do front; a API é pública em github.com/marcosmatosteodoro/life-manager-api.
+    repoUrl: "https://github.com/marcosmatosteodoro/life-manager-app",
     // media: adicionar imagens/vídeos em /public/projects/life-manager/ (na ordem desejada).
     media: [],
   },
